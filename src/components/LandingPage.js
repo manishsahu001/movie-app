@@ -69,14 +69,15 @@ const LandingPage = () => {
 
         <div className="box">
           <div className="description-box" id='box-5'>
-            <div className="feature-img-container">
-              <img src={feature5Img} alt="Featured-images" />
-            </div>
-
             <div className="content">
               <h1>Enjoy Action Movies.</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ipsa debitis quibusdam blanditiis dolorum. Laborum ipsam velit officia quos cumque?</p>
             </div>
+
+            <div className="feature-img-container">
+              <img src={feature5Img} alt="Featured-images" />
+            </div>
+            
           </div>
         </div>
 

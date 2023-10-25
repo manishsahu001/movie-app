@@ -44,7 +44,9 @@ const Navbar = () => {
         <>
             <div className="header">
                 <div className="logo">
-                    <h1>ZedFlix</h1>
+                    <h1>
+                       <span>Z</span>edFlix
+                    </h1>
                     <button id='btn-nav' onClick={addNewClass}>
                         <span className={`material-symbols-outlined`}>
                             menu
