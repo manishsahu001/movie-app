@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles/landingpage.css'
 // import Movies from './Movies'
-// import Carousel from './Carousel'
+import Carousel from './Carousel'
 import feature1Img from '../img/feature-1.jpg'
 import feature2Img from '../img/feature-2.jpg'
 import feature3Img from '../img/feature-3.jpg'
@@ -10,7 +10,7 @@ import feature5Img from '../img/feature-5.jpg'
 const LandingPage = () => {
   return (
     <div>
-      {/* <Carousel /> */}
+      <Carousel />
       {/* <Movies />  */}
 
       <div className="home-container">
