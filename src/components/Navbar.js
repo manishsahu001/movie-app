@@ -58,15 +58,22 @@ const Navbar = () => {
 
                         {isAuth ? <li><Link to="/about" className={` nav-link link `}>ABOUT</Link></li> : ""}
                         {isAuth ? <li><Link to="/blog" className={`nav-link link `}>BLOG</Link></li> : ""}
-                        {isAuth ? <li><input type="search" name="search" id="search" placeholder={'Search...'} className={` ${toggleClass} nav-link link `} /></li> : ""}
+                        {/* {isAuth ? <li><input type="search" name="search" id="search" placeholder={'Search...'} className={` ${toggleClass} nav-link link `} /></li> : ""} */}
 
-                        {isAuth ? <li><span className="material-symbols-outlined">
+                        {isAuth ? <span className="material-symbols-outlined">
                             search
-                        </span></li> : ""}
+                        </span> : ""}
 
 
-                        {!isAuth ? <li><Link to="/login" className={` ${toggleClass} nav-link link `}>LOGIN</Link></li> : ""}
-                        {isAuth ? <button onClick={logout} className='btn-logout'>Logout</button> : ""}
+                        {!isAuth ? <li><Link to="/login" className={` ${toggleClass} nav-link link `}>
+                            <span className="material-symbols-outlined">
+                                login
+                            </span></Link></li> : ""}
+                        {isAuth ?
+                            <span className="material-symbols-outlined btn-logout" onClick={logout}>
+                                logout
+                            </span>
+                         : ""}
 
                     </ul>
                 </nav>
