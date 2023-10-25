@@ -1,0 +1,52 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    /* width: 90%; */
+    /* border: 10px solid yellow; */
+    background-color: black;
+
+}
+
+.home-container .description-box {
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    width: 100%;
+    padding: 3rem;
+    /* border: none; */
+    border-bottom: 5px solid gray;
+    height: 600px;
+}
+
+.description-box img {
+    /* width: 33%; */
+    width: 350px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    border-bottom: 15px solid rgba(29, 4, 92, 0.509);
+}
+
+.description-box .content {
+    width: 40%;
+}
+
+.description-box .content h1 {
+    font-size: 3.6rem;
+    color: white;
+}
+
+.description-box .content p {
+    font-size: 2rem;
+    color: white;
+}
+
+.description-box .feature-img-contaianer {
+    /* width: 40%; */
+}
+
+/* ------------------ Responsisve ---------------------------- */

@@ -1,0 +1,132 @@
+.header {
+    /* border: 5px solid blue; */
+    /* height: 100px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.575), rgb(1, 7, 32));
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+}
+
+.header .logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* height: 100px; */
+    padding: 1.4rem;
+}
+
+.header .logo.btn-nav {
+    display: inline-block;
+    margin-right: 0;
+}
+
+.header nav {
+    /* display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 1rem; */
+}
+
+.header h1 {
+    font-size: 2rem;
+}
+
+.header .navbar {
+    display: flex;
+    align-items: center;
+}
+
+.header .navbar li {
+    list-style: none;
+    margin: 1rem;
+    padding: 1.4rem;
+}
+
+.header .navbar li a {
+    font-size: 1.4rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+.header .navbar li input {
+    height: 2.5rem;
+    display: none;
+}
+
+.header #btn-nav {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-weight: 500;
+    font-size: 2rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+.navbar .btn-logout{
+    width: 10rem;
+    color: black;
+    height: 3.5rem;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+.navbar span{
+    color: white;
+}
+.active {}
+
+/* --------------- Navbar Responsive ---------------------- */
+@media screen and (max-width: 657px) {
+
+    .header {
+           display: inline-block;
+           width: 100%;
+           height: auto;
+           background-color: lightcyan;
+    }
+
+    .header .logo,
+    .header .logo.btn-nav {
+           padding: 1.8rem;
+    }
+
+    /* .header nav .link{
+             display: none;
+     }
+   */
+    .header nav {
+           display: none;
+    }
+
+    .header .navbar {
+           display: flex;
+           flex-direction: column;
+    }
+
+    .header .active {
+           display: flex;
+           width: 100%;
+           justify-content: center;
+           align-items: center;
+           transition: 1s all ease;
+    }
+
+    .header .active .navbar li {
+           border: 1px solid green;
+           width: 100%;
+           display: block;
+           text-align: center;
+    }
+
+    .header #btn-nav {
+           display: block;
+    }
+}
+

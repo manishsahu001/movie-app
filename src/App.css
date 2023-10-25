@@ -1,0 +1,80 @@
+        /* SPACING SYSTEM (px)
+        2 / 4 / 8/ 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+        
+        FONT SIZE SYSTEM (px)
+    
+        10 / 12/ 14/ 16/ 18 / 20/ 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+         */
+        * {
+               margin: 0;
+               padding: 0;
+               box-sizing: border-box;
+               font-size: 10px;
+               color: white;
+        }
+
+        body {
+               background: black;
+        }
+
+        .movie-card {
+               border: 2px solid grey;
+               max-width: 200px;
+               /* height: 450px; */
+               margin: auto;
+               border-radius: 10px;
+               box-sizing: border-box;
+               cursor: pointer;
+               opacity: 0.5;
+        }
+
+        .movie-card:hover {
+               transform: scale(1.1);
+               transition: .5s ease-in-out;
+               opacity: 1;
+
+        }
+
+        .movie-card-header {
+               /* border: 1px solid green; */
+               border-radius: 10px;
+
+        }
+
+        .movie-card-header img {
+               width: 100%;
+               border-top-right-radius: 10px;
+               border-top-left-radius: 10px;
+        }
+
+        .movie-card-body {}
+
+        .movie-card-body h1 {
+               font-size: 20px;
+               line-height: 1;
+        }
+
+        .movie-card-body h2 {
+               font-size: 14px;
+        }
+
+        .movie-card-footer {
+               margin-bottom: 10px;
+        }
+
+        span {
+               color: rgb(32, 23, 27);
+               font-weight: bold;
+               display: block;
+        }
+
+
+        /* --------------------- Navbar  Styling -------------------------  */
+        
+        /* ----------------------- Carousel ----------------------  */
+
+       
+
+        /* -------------- Home Component style */
+        

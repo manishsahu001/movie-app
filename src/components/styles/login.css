@@ -1,0 +1,59 @@
+.form-container{
+    /* border: 2px solid red; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("../../img/login-bg.jpg");
+    opacity: .8;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background: white; */
+    
+}
+.form{
+    border: 2px solid rgba(17, 17, 17, 0.42);
+    border-radius: 1rem;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+    background: linear-gradient(rgba(0, 0, 0, 0.447), rgba(0, 0, 0, 0.301), rgba(1, 7, 32, 0.379));
+}
+.form input, .form button{
+    width: 30rem;
+    height: 4.8rem;
+    padding: 1.4rem;
+    margin: .5rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 1rem;
+    outline: none;
+    caret-color: white;
+    color: white;
+}
+.form input{
+    background: linear-gradient(rgba(87, 109, 143, 0.537), rgba(55, 72, 83, 0.66), rgba(116, 139, 135, 0.379));
+    border: 1px solid #0b3c5172;
+}
+
+.form input::placeholder{
+    color: white;
+}
+.form input:focus{
+    font-size: 1rem;
+    transition: .6s ease;
+    color: white;
+}
+.form .btn-login{
+    margin-top: 2.4rem;
+    color: black;
+    cursor: pointer;
+    background-color: red;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
