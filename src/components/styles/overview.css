@@ -1,0 +1,23 @@
+.overview{
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+.overview .show-card{
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    /* gap: 2rem; */
+    height: 80vh;
+    overflow-y: scroll;
+}
+.overview .show-card::-webkit-scrollbar{
+    width: 1px;
+}
+
+.overview .preview-card{
+    width: 50%;
+    position: sticky;
+}

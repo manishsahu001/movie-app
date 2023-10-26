@@ -7,9 +7,10 @@ const Card = ({movie, onClick}) => {
         <div className="poster">
           <img src={movie.Images[0]} alt="" />
         </div>
-        <div className="content">
-          {/* <h1>{movie.Title}</h1> */}
-        </div>
+          <div className="card-content">
+          <h1>{movie.Title}</h1>
+          <p>{movie.Type}</p>
+          </div>
       </div>
     </>
   )

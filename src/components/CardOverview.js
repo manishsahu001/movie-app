@@ -1,9 +1,11 @@
 import React from 'react'
 import './styles/cardOvervies.css'
 const CardOverview = ({movie}) => {
+
+
   return (
     <>
-        <div className="movie-overview">
+        <div className="movie-overview" >
             <div className="movie-poster">
         <img src={movie.Images[0]} alt="Movie Poster" className='movie-poster-img' />
             </div>
