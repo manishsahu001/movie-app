@@ -1,23 +1,47 @@
-.overview{
+.overview {
     display: flex;
     gap: 1rem;
     width: 100%;
+    justify-content: center;
+    align-items: center;
 }
-.overview .show-card{
-    width: 40%;
+
+.overview .show-card {
+    width: 55%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    /* gap: 2rem; */
+    gap: 2rem;
     height: 80vh;
     overflow-y: scroll;
 }
-.overview .show-card::-webkit-scrollbar{
+
+.overview .show-card::-webkit-scrollbar {
     width: 1px;
 }
 
-.overview .preview-card{
-    width: 50%;
-    position: sticky;
+.overview .preview-card {
+    margin-top: 0;
+    width: 30%;
+    height: 80vh;
+}
+
+/* ------------------------- Responsive design ------------------- */
+@media screen and (max-width: 772px) {
+    .overview .preview-card{
+        display: none;
+    }
+    .overview .show-card{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 572px) {
+    .overview .preview-card{
+        display: none;
+    }
+    .overview .show-card{
+        width: 100%;
+    }
 }

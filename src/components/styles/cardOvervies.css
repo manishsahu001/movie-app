@@ -1,20 +1,91 @@
 .movie-overview{
-    /* border: 2px solid red; */
     box-sizing: border-box;
-    position: relative;
+    border-radius: 0.2rem;
+    /* border: 1rem solid green; */
+    color: white;
+    background: linear-gradient(rgb(3, 5, 6), rgba(6, 5, 15, 0.84), rgba(39, 25, 65, 0.813));
     
+
 }
 .movie-poster .movie-poster-img{
     width: 100%;
-    height: 300px;
-    position: relative;
+    height: 250px;
     background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0), rgb(1, 7, 32));
     opacity: .7;
-    border-radius: 1rem;
+    /* border: 2px solid yellow; */
+    margin-bottom: 1rem;
+    
 }
 
-.movie-description{
-    position: absolute;
-    top: 70%;
-    left: 10%;
+.movie-overview .movie-description{
+    margin-bottom: 1rem;
+    padding: 1.4rem;
 }
+.movie-overview .movie-description h1{
+    font-size: 2.4rem;
+    line-height: 1;
+}
+.movie-overview .movie-description ul{
+    display: flex;
+    /* gap: .5rem; */
+}
+
+
+.movie-overview .movie-description li{
+
+    list-style-type: none;
+    margin-left: .1rem;
+    margin-bottom: 2rem;
+}
+.movie-overview .movie-description .movie-summary h5{
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+.movie-overview .movie-description .movie-summary p{
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+.movie-overview .movie-description .author em{
+    font-size: 1.1rem;
+}
+.movie-overview .movie-description .author{
+    margin-bottom: 2rem;
+}
+.movie-overview .movie-description .action-btn{
+    padding-bottom: .5rem;
+    display: flex;
+    /* justify-content: center; */
+    margin-left: 1.5rem;
+    align-items: center;
+    gap: 1rem;
+}
+.movie-overview .movie-description .action-btn .btn{
+    background-color: transparent;
+    border: 1px solid red;
+    color: red;
+    font-size: 1.2rem;
+    border-radius: .5rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+.movie-overview .movie-description .action-btn .btn:hover{
+    border-color: gray;    
+    color: grey;
+}
+.movie-overview .movie-description .action-btn .material-symbols-outlined:hover{
+    cursor: pointer;
+    color: red;
+}
+.movie-overview .movie-description .action-btn .material-symbols-outlined.play-fill{
+    color: red;
+}
+.movie-overview .movie-description .action-btn .material-symbols-outlined.icon-style{
+    /* margin: 1rem; */
+    padding: 1rem;
+
+}
+

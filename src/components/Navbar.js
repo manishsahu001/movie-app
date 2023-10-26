@@ -37,13 +37,15 @@ const Navbar = () => {
         navigate('/')
         logout_notify("Logged Out!")
     }
-
+    const clickLogo = ()=>{
+        navigate('/')
+    }
 
     return (
         <>
             <div className="header">
                 <div className="logo">
-                    <h1>
+                    <h1 onClick={clickLogo}>
                        <span>Z</span>edFlix
                     </h1>
                     <button id='btn-nav' onClick={addNewClass}>
@@ -70,6 +72,11 @@ const Navbar = () => {
                             <span className="material-symbols-outlined">
                                 login
                             </span></Link></li> : ""}
+                            {isAuth ?
+                            <span className="material-symbols-outlined btn-logout" onClick={logout}>
+                                dark_mode
+                            </span>
+                         : ""}  
                         {isAuth ?
                             <span className="material-symbols-outlined btn-logout" onClick={logout}>
                                 logout
