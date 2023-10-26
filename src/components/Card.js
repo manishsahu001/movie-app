@@ -1,18 +1,14 @@
 import React from 'react'
-
+import './styles/card.css'
 const Card = ({movie, onClick}) => {
   return (
     <>
       <div className="card" onClick={()=>{onClick(movie)}}>
         <div className="poster">
-          <img src={movie.Poster} alt="" />
+          <img src={movie.Images[0]} alt="" />
         </div>
         <div className="content">
-          <h1>{movie.Title}</h1>
-          <p>{movie.Actors}</p>
-          <p>{movie.Year}</p>
-          <p>{movie.Rated}</p>
-          <p>{movie.Language}</p>
+          {/* <h1>{movie.Title}</h1> */}
         </div>
       </div>
     </>
