@@ -25,7 +25,7 @@ const App = () => {
       {getToken ? <Route path='/blog' element={<Blog />} /> : ""}
     </Routes>
     <ToastContainer />
-    {getToken ? <Footer /> : "" }
+    {/* {getToken ? <Footer /> : "" } */}
   </BrowserRouter>
     
     </>

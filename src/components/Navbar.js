@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 // import '../App.css'
 import './styles/navbar.css';
 import { toast } from 'react-toastify'
-import { Link, useNavigate } from 'react-router-dom'
-import Cookies from 'js-cookie';
+import { Link, useNavigate } from 'react-router-dom';
+
 const Navbar = () => {
     const [btnclass, setBtnclass] = useState(false)
     const addNewClass = () => {
@@ -36,7 +36,6 @@ const Navbar = () => {
         setIsAuth(false);
         navigate('/')
         logout_notify("Logged Out!")
-        Cookies.remove('login')
     }
 
 

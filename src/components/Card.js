@@ -1,17 +1,20 @@
 import React from 'react'
-import feature1 from '../img/feature-4.jpg'
-const Card = () => {
+
+const Card = ({movie, onClick}) => {
   return (
     <>
-            <div className="card">
-                <div className="card-img">
-                    <img src={feature1} alt="" style={{width: "250px"}} />
-                </div>
-
-                <div className="card-description">
-                    <h1>Description</h1>
-                </div>
-            </div>
+      <div className="card" onClick={()=>{onClick(movie)}}>
+        <div className="poster">
+          <img src={movie.Poster} alt="" />
+        </div>
+        <div className="content">
+          <h1>{movie.Title}</h1>
+          <p>{movie.Actors}</p>
+          <p>{movie.Year}</p>
+          <p>{movie.Rated}</p>
+          <p>{movie.Language}</p>
+        </div>
+      </div>
     </>
   )
 }
