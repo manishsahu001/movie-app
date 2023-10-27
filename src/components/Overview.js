@@ -30,6 +30,7 @@ const Overview = () => {
       ]
     
   });
+  
   const handleMovieClick = (movie) => {
     setSelectedMovie(movie)
   }
