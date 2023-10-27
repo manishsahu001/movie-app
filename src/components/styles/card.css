@@ -21,18 +21,44 @@
     font-size: 1rem;
     position: absolute;
     text-align: center;
-    display: block;
+    display: none;
     /* width: 100%; */
     height: 40px;
     top: 60%;
     
+    
 }
+
+
 
 /* ------------ Responsive ----------------------- */
 @media screen and (max-width: 572px) {
     .card{
-        width: 90%;
-        margin: 3rem;
+        width: 25rem;
+        margin: 1.5rem;
         padding: 1rem;
+        height: auto;
+        position: inherit;
+        margin-bottom: 2rem;
+        /* height: 500px; */
+        
+    }
+
+    .card .card-content{
+        position: inherit;
+        display: block;
+    }
+}
+@media screen and (max-width: 400px) {
+    .card{
+        width: 80%;
+        margin: 3rem 0rem 3rem 0rem;
+        /* padding: 2rem; */
+        border: 2px solid red;        
+    }
+
+    .card .card-content{
+        position: inherit;
+        display: block;
     }
 }

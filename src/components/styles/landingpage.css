@@ -50,3 +50,46 @@
 }
 
 /* ------------------ Responsisve ---------------------------- */
+
+@media screen and (max-width: 940px) {
+    .home-container {
+        margin-bottom: 4rem;
+        /* border: 2px solid red; */
+        
+    }
+    .home-container .description-box{
+        border: 2px solid blue;
+        position: relative;
+    }
+    .description-box img{
+        /* border: 2px solid blue; */
+    }
+    .description-box .content{
+        /* border: 2px solid blue; */
+    }
+}
+
+@media screen and (max-width: 800px){
+    .home-container .description-box{
+        /* background-color: yellow; */
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        min-height: 80vh;
+    }
+    .description-box .content{
+        width: 90%;
+    }
+    .description-box img{
+        /* position: absolute; */
+        width: 300px;
+    }   
+    .description-box .content-alignment{
+        position: absolute;
+        top: 0;
+    }
+    
+}

@@ -73,11 +73,15 @@ const Navbar = () => {
                                 login
                             </span></Link></li> : ""}
                             {isAuth ?
-                            <span className="material-symbols-outlined btn-logout" onClick={logout}>
+                            <span className="material-symbols-outlined" onClick={logout}>
                                 dark_mode
                             </span>
                          : ""}  
                         {isAuth ?
+                                    <span className="material-symbols-outlined">
+                                    shopping_cart
+                                    </span>
+                         : ""}                        {isAuth ?
                             <span className="material-symbols-outlined btn-logout" onClick={logout}>
                                 logout
                             </span>

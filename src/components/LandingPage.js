@@ -16,7 +16,7 @@ const LandingPage = () => {
       <div className="home-container">
         <div className="box">
           <div className="description-box" id='box-1'>
-            <div className="content">
+            <div className="content content-alignment">
               <h1>Enjoy Action Movies.</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ipsa debitis quibusdam blanditiis dolorum. Laborum ipsam velit officia quos cumque?</p>
             </div>
@@ -26,24 +26,26 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
+
         <div className="box">
           <div className="description-box" id='box-2'>
 
-            <div className="feature-img-container">
+            <div className="feature-img-container ">
               <img src={feature2Img} alt="Featured-images" />
             </div>
 
-            <div className="content">
+            <div className="content content-alignment">
               <h1>Night Show</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ipsa debitis quibusdam blanditiis dolorum. Laborum ipsam velit officia quos cumque?</p>
             </div>
 
           </div>
         </div>
+
         <div className="box">
           <div className="description-box" id='box-3'>
 
-            <div className="content">
+            <div className="content img-alignment">
               <h1>Are you alone? </h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ipsa debitis quibusdam blanditiis dolorum. Laborum ipsam velit officia quos cumque?</p>
             </div>
@@ -54,13 +56,14 @@ const LandingPage = () => {
 
           </div>
         </div>
+
         <div className="box">
           <div className="description-box" id='box-4'>
-            <div className="feature-img-container">
-              <img src={feature4Img} alt="Featured-images" />
+            <div className="feature-img-container img-alignment">
+              <img src={feature4Img} alt="Featured-images " />
             </div>
 
-            <div className="content">
+            <div className="content content-alignment">
               <h1>Popcorn with ZedFlix</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ipsa debitis quibusdam blanditiis dolorum. Laborum ipsam velit officia quos cumque?</p>
             </div>
