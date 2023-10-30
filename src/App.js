@@ -8,8 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Login from './components/Login'
 import { ToastContainer} from 'react-toastify';
 import Blog from './components/Blog'
-
-
+import About from './components/About'
 
 const getToken = localStorage.getItem('token')
 
@@ -21,8 +20,9 @@ const App = () => {
     <Routes>
       <Route path='/' element={<LandingPage />} />
       <Route path='/login' element={<Login />} />
-      {getToken ? <Route path='/home' element={<Home />} /> : ""}
-      {getToken ? <Route path='/blog' element={<Blog />} /> : ""}
+      {getToken ? <Route path='/home' element={<Home />} /> : null}
+      {getToken ? <Route path='/about' element={<About />} /> : null}
+      {getToken ? <Route path='/blog' element={<Blog />} /> : null}
     </Routes>
     <ToastContainer />
     {/* {getToken ? <Footer /> : "" } */}

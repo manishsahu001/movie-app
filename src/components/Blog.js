@@ -1,19 +1,34 @@
-import React from 'react'
-import {useSelector, useDispatch} from 'react-redux'
-import { increment, decrement } from '../redux/index';
+import React, { useEffect, useState } from 'react'
 const Blog = () => {
   
 
-    const counter = useSelector(state => state.counter);
-    const dispatch = useDispatch();
+  const [blog, setBlog] = useState([]);
 
-    
-    
+  const fetchData = async ()=>{
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const data = await response.json();
+    console.log(data)
+
+    setBlog(data);
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+  
+
+  
+
   return (
     <div>
-      <h1>{counter.counter}</h1>
-      <button onClick={()=>{dispatch(increment())}}>Increment</button>
-      <button onClick={()=>{dispatch(decrement())}}>Decrement</button>
+      {blog.map((item)=>{
+        return <div key={item.id}>
+          <p>{item.id}</p>
+          <h1>{item.title}</h1>
+          <p>{item.body}</p>
+        </div>
+      })}
+      <h1></h1>
     </div>
   )
 }
