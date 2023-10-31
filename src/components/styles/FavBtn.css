@@ -1,0 +1,15 @@
+.fav-btn{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    position: relative;
+}
+.fav-movie-count{
+    width: 1rem;
+    height: 1rem;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: -.2rem;
+    right: -.2rem;
+}

@@ -7,6 +7,8 @@ import feature2Img from '../img/feature-2.jpg'
 import feature3Img from '../img/feature-3.jpg'
 import feature4Img from '../img/feature-4.jpg'
 import feature5Img from '../img/feature-5.jpg'
+// import gifi from '../img/tvChannelChangingWomen.gif'
+import illustrator from '../img/Home cinema-amico.png'
 const LandingPage = () => {
   return (
     <div>
@@ -23,6 +25,7 @@ const LandingPage = () => {
 
             <div className="feature-img-container">
               <img src={feature1Img} alt="Featured-images" />
+              {/* <img src={illustrator} alt="Featured-images" /> */}
             </div>
           </div>
         </div>
@@ -64,7 +67,7 @@ const LandingPage = () => {
             </div>
 
             <div className="content content-alignment">
-              <h1>Popcorn with ZedFlix</h1>
+              <h1>Popcorn</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ipsa debitis quibusdam blanditiis dolorum. Laborum ipsam velit officia quos cumque?</p>
             </div>
           </div>

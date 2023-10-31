@@ -1,8 +1,22 @@
 import React from 'react'
 import './styles/cardOvervies.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { favActions } from '../redux/slice/favorite'
+
 const CardOverview = ({ movie }) => {
 
+  const movieCount = useSelector(state=> state.favorite.quantity);
+  const dispatch = useDispatch();
+  const addToFav = () => {
+    dispatch(favActions.addToFav({
+      imdbID: movie.imdbID,
+      Poster: movie.Poster,
+      Title: movie.Title,
+      Type: movie.Type,
+    }))
+  }
 
+  
   return (
     <>
       <div className="movie-overview" >
@@ -29,7 +43,7 @@ const CardOverview = ({ movie }) => {
           <div className="action-btn">
             <button className='btn'><span className="material-symbols-outlined play-fill">play_circle</span>Watch Trailer</button>
 
-            <span className="material-symbols-outlined icon-style" title='Favorite' >favorite</span>
+            <span className="material-symbols-outlined icon-style" title='Favorite' onClick={addToFav} >favorite</span>
 
             <span className="material-symbols-outlined icon-style" title='Bookmark'>bookmark</span>
             <span className="material-symbols-outlined icon-style" title='Share'>share</span>

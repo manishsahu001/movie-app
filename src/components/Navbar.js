@@ -5,6 +5,7 @@ import { toast } from 'react-toastify'
 import { Link, useNavigate } from 'react-router-dom';
 import loadingGif from '../img/loading.gif';
 import SearchedResult from './SearchedResult';
+import FavBtn from './FavBtn';
 const Navbar = () => {
     const [btnclass, setBtnclass] = useState(false)
     const [inputClass, setInputClass] = useState(false)
@@ -163,13 +164,11 @@ const Navbar = () => {
                                 {toggleTheme}
                             </span>
                             : ""}
-                        {/* {isAuth ?
+                        {isAuth ?
                             <div>
-                            <span className="material-symbols-outlined">
-                                shopping_cart
-                            </span>
+                                <FavBtn />
                             </div>
-                            : ""} */}
+                            : ""}
 
                         {isAuth ?
                             <span className="material-symbols-outlined btn" onClick={logout}>

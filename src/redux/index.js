@@ -1,39 +1,12 @@
-import {createSlice, AsyncThunk, createAsyncThunk} from '@reduxjs/toolkit'
+import { configureStore } from "@reduxjs/toolkit";
+import uiSlice from "./slice/ui-slice";
+import favSlice from './slice/favorite'
 
-
-const initialState = {
-    movies: [],
-    loading: true,
-    error: null,
-}
-
-export const fetchMovies = createAsyncThunk(async ()=>{
-    const response = await fetch("http://www.omdbapi.com/?apikey=6095e741&t=avatar")
-    console.log(response)
-    return response.json();
-
-})
-
-const counterReducer = createSlice({
-    name: "counter",
-    initialState: {
-        counter: 0, 
-        btnClsss: false,
-        
-    },
-    reducers:{
-        increment: (state)=>{
-            state.counter++;
-        },
-        decrement: (state)=>{
-            state.counter--;
-        },
-        addBtnClass: (state)=>{
-            state.btnClsss = true;
-        }
-        
+const store = configureStore({
+    reducer: {
+        ui: uiSlice,
+        favorite: favSlice
     }
 });
 
-export const {increment, decrement, addBtnClass} = counterReducer.actions
-export default counterReducer.reducer
+export default store;

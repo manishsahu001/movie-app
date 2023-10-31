@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import './styles/blog.css';
 const Blog = () => {
   
 
@@ -21,6 +22,7 @@ const Blog = () => {
 
   return (
     <div>
+
       {blog.map((item)=>{
         return <div key={item.id}>
           <p>{item.id}</p>
