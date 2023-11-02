@@ -1,9 +1,9 @@
 import React from 'react'
 import './styles/cardOvervies.css'
-const SearchedResult = ({id, title, type, year, poster}) => {
+const SearchedResult = ({ id, title, type, year, poster }) => {
   return (
     <>
-           <div className="movie-overview" >
+      <div className="movie-overview" >
         <div className="movie-poster">
           <img src={poster} alt="Movie Poster" className='movie-poster-img' />
         </div>
@@ -15,15 +15,6 @@ const SearchedResult = ({id, title, type, year, poster}) => {
             <li>Type - {type} </li>
             <li>Year - {year} </li>
           </ul>
-
-          {/* <div className="movie-summary">
-            <h5>Summary</h5>
-            <p>{movie.Plot}</p>
-          </div> */}
-
-          <div className="author">
-            {/* <em>{movie.Actors}</em> */}
-          </div>
 
           <div className="action-btn">
             <button className='btn'><span className="material-symbols-outlined play-fill">play_circle</span>Watch Trailer</button>

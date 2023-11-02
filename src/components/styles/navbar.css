@@ -9,6 +9,7 @@
     position: sticky;
     top: 0;
     z-index: 10000;    
+    margin-bottom: 2rem;
 }
 
 .navbar-light{
@@ -39,8 +40,10 @@
 }
 
 .header h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: red;
+    /* font-family: 'Libre Franklin', sans-serif; */
+    font-family: 'Nosifer', sans-serif;
 }
 
 .header h1 span {
@@ -67,7 +70,7 @@
     font-weight: bold;
     color: white;
 }
-.header .navbar li a:hover, .header .navbar span:hover{
+.header .navbar li a:hover, .header .navbar .material-symbols-outlined:hover{
     color: rgba(212, 7, 7, 0.817);
     transition: .5s ease;
 }
@@ -152,10 +155,7 @@
         padding: 1.8rem;
     }
 
-    /* .header nav .link{
-             display: none;
-     }
-   */
+
     .header nav {
         display: none;
     }
@@ -182,5 +182,11 @@
 
     .header #btn-nav {
         display: block;
+    }
+}
+
+@media screen and (max-width: 337px) {
+    .header{
+        width: 100%;
     }
 }

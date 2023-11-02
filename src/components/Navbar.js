@@ -6,24 +6,31 @@ import { Link, useNavigate } from 'react-router-dom';
 import loadingGif from '../img/loading.gif';
 import SearchedResult from './SearchedResult';
 import FavBtn from './FavBtn';
+import { useSelector, useDispatch } from 'react-redux';
+import { uiActions } from '../redux/slice/ui-slice';
 const Navbar = () => {
-    const [btnclass, setBtnclass] = useState(false)
-    const [inputClass, setInputClass] = useState(false)
+
+    const dispatch = useDispatch()
+
+    // Add styles for the navbar responsive.
+    const btnClass = useSelector(state => state.ui.btnClass)
+    const addNewClass = () => {
+        dispatch(uiActions.setBtnClass())
+    }
+    const toggleClass = btnClass ? "active" : "";
+
+
     const [isAuth, setIsAuth] = useState(false);
     const [dark, setDark] = useState(true)
 
-    const addNewClass = () => {
-        setBtnclass(btnclass => !btnclass);
-    }
-    const toggleClass = btnclass ? "active" : "";
-
+    // Toggle Search Input field
+    const inputClass = useSelector(state => state.ui.InputClass)
     const addInputClass = () => {
-        setInputClass(inputClass => !inputClass);
-        console.log(inputClass)
+        dispatch(uiActions.setInputClass());
     }
-
     const toggleInputClass = inputClass ? "expand" : "search-input";
 
+    
     const logout_notify = (msg) => {
         toast.success(msg, {
             position: "bottom-right",

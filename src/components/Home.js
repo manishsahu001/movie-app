@@ -1,12 +1,14 @@
-import React, {useState} from "react";
+import React from "react";
 import Overview from "./Overview";
 import './styles/home.css'
 import TopMovie from "./TopMovie";
+import { useSelector } from "react-redux";
 const Home = () => {
+  const showFavList = useSelector(state => state.ui.favListVisible);
  
   return (
     <div className="home">
-      <Overview />
+      {!showFavList && <Overview /> }
       <TopMovie />
     </div>
   );

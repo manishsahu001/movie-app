@@ -33,7 +33,16 @@ const App = () => {
       {getToken ? <Route path='/about' element={<About />} /> : null}
       {getToken ? <Route path='/blog' element={<Blog />} /> : null}
     </Routes>
-    <ToastContainer />
+    <ToastContainer 
+      position="bottom-right"
+      autoClose={1000}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      theme="dark"
+      
+    />
     {/* {getToken ? <Footer /> : "" } */}
   </BrowserRouter>
     

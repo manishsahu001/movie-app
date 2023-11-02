@@ -3,13 +3,26 @@
     outline: none;
     border: none;
     position: relative;
+    
 }
 .fav-movie-count{
-    width: 1rem;
-    height: 1rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    /* width: auto; */
+    /* height: auto; */
     background-color: red;
     border-radius: 50%;
     position: absolute;
-    top: -.2rem;
-    right: -.2rem;
+    top: -.4rem;
+    right: -.3rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .5rem;
+}
+.fav-movie-count span{
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
 }

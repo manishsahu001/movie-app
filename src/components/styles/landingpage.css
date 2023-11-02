@@ -45,9 +45,6 @@
     color: white;
 }
 
-.description-box .feature-img-contaianer {
-    /* width: 40%; */
-}
 
 /* ------------------ Responsisve ---------------------------- */
 
@@ -55,17 +52,23 @@
     .home-container .description-box{
         height: 50rem;
         text-align: center;
+        /* margin-bottom: 2rem; */
     }
     .home-container #box-1, .home-container #box-3, .home-container #box-5 {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     
     .home-container #box-2, .home-container #box-4 {
         flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;    
     }
     .description-box .content {
         width: 90%;
+        margin-bottom: 1rem;
     }
     .description-box .feature-img-contaianer {
         width: 90%;
@@ -73,7 +76,26 @@
     
     
 }
+@media screen and (max-width: 922px) {
+    .home-container img{
+        width: 300px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .description-box .content{
+        width: 95%;
+    }
+}
 
+@media screen and (max-width: 555px) {
+    .description-box .content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .description-box .content p {
+        font-size: 1.5rem;
+    }
+}
 @media screen and (max-width: 464px) {
     .description-box .content {
         width: 98%;
@@ -86,7 +108,16 @@
     .description-box .content {
         width: 98%;
     }
-    #box-4 img {
+    .description-box img {
         width: 250px;
+    }
+}
+@media screen and (max-width: 401px) {
+    .description-box .content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .description-box .content p {
+        font-size: 1.3rem;
     }
 }

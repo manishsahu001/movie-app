@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import "./styles/login.css"
 import {toast} from 'react-toastify'
-import Cookies from 'js-cookie';
 
 const token = "sdjflserjlejrlewrijn446222gdjdj$33rfhsdfdfdsfde"
 

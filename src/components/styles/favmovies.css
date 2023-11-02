@@ -1,0 +1,26 @@
+.fav-movie-card{
+    border: 2px solid red;
+    background-color: #1b3ac6b6;
+   width: 25rem;
+   margin: 2rem;
+   padding: 2rem;
+   height: 50rem;
+
+}
+.fav-movie-poster img{
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.fav-movie-card button{
+    font-size: 3rem;
+    width: 5rem;
+    color: white;
+    cursor: pointer;
+    float: right;
+    margin: .2rem;
+    /* background-color: transparent; */
+    background: red;
+    border-radius: 1rem;
+    border: none;
+    
+}

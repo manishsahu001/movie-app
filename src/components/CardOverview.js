@@ -1,11 +1,14 @@
 import React from 'react'
 import './styles/cardOvervies.css'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { favActions } from '../redux/slice/favorite'
-
+import {toast} from 'react-toastify'
 const CardOverview = ({ movie }) => {
 
-  const movieCount = useSelector(state=> state.favorite.quantity);
+  const notify  = (msg)=>{
+    toast.success(msg)
+  }
+
   const dispatch = useDispatch();
   const addToFav = () => {
     dispatch(favActions.addToFav({
@@ -14,6 +17,8 @@ const CardOverview = ({ movie }) => {
       Title: movie.Title,
       Type: movie.Type,
     }))
+
+    notify("Added to fav")
   }
 
   
@@ -31,10 +36,6 @@ const CardOverview = ({ movie }) => {
             <li>Type - {movie.Type} </li>
           </ul>
 
-          {/* <div className="movie-summary">
-            <h5>Summary</h5>
-            <p>{movie.Plot}</p>
-          </div> */}
 
           <div className="author">
             <em>{movie.Actors}</em>

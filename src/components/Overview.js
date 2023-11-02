@@ -10,6 +10,7 @@ const Overview = () => {
   
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false)
+  
   const getMovies = async()=>{
     setLoading(true)
     const response = await fetch("http://www.omdbapi.com/?apikey=6095e741&s=rider");
@@ -39,6 +40,7 @@ const Overview = () => {
         </div>
 
         <div className="preview-card">
+          
           {selectedMovie && <CardOverview movie={selectedMovie} />}
         </div>
 
