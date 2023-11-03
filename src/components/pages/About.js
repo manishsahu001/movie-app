@@ -5,15 +5,10 @@ import { uiActions } from '../../redux/slice/ui-slice'
 const About = () => {
 
   const changeTheme = useSelector((state)=> state.ui.dark)
-  const dispatch = useDispatch()
-  const toggleTheme = ()=>{
-    dispatch(uiActions.toggleTheme())
-  }
-  const toggleThemeClass = changeTheme ? "" : 'about'
+
   return (
-    <div className={changeTheme ? "about" : "aboutTest"}>
+    <div className={changeTheme ? "aboutTest" : "about"}>
       <h1>About</h1>
-      <button onClick={toggleTheme}>Dark</button>
     </div>
 
   )

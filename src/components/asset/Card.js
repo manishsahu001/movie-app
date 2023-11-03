@@ -1,6 +1,7 @@
 import React from 'react'
 import '../styles/card.css'
 const Card = ({movie, onClick}) => {
+  
   return (
     <>
       <div className="card" onClick={()=>{onClick(movie)}}>

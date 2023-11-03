@@ -81,15 +81,7 @@ const Navbar = () => {
     // }
 
 
-    // Theme Changing
-    const toggleTheme = dark ? "light_mode" : "dark_mode";
-    const changeTheme = ()=>{
-        if(dark === true){
-            setDark(false)
-        }else{
-            setDark(true)
-        }
-    }
+   
     const [searchMovie, setSearchMovie] = useState('');
     const [getMovie, setGetMovie] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -127,9 +119,16 @@ const Navbar = () => {
         setLoading(false);
     };
 
+
+
+     // Theme Changing
+     const theme = useSelector(state=> state.ui.dark)
+    const toggleTheme = ()=>{
+        dispatch(uiActions.toggleTheme())
+    }
     return (
         <>
-            <div className="header">
+            <div className={"header"}>
                 <div className="logo">
                     <h1 onClick={()=>{navigate('/')}}>
                         <span>Z</span>edFlix
@@ -143,13 +142,19 @@ const Navbar = () => {
 
                 <nav className={` ${toggleClass}`}>
                     <ul className='navbar'>
-                        {isAuth ? <li><Link to="/home" className={` nav-link link `}>HOME</Link></li> : ""}
+                        {isAuth ? <li title='Home'><Link to="/home" className={` nav-link link `}>
+                        <span className="material-symbols-outlined">home</span>
+                        </Link></li> : ""}
 
-                        {isAuth ? <li><Link to="/about" className={` nav-link link `}>ABOUT</Link></li> : ""}
-                        {isAuth ? <li><Link to="/blog" className={`nav-link link `}>BLOG</Link></li> : ""}
+                        {isAuth ? <li title='About'><Link to="/about" className={` nav-link link `}>
+                        <span className="material-symbols-outlined">info</span>
+                        </Link></li> : ""}
+                        {isAuth ? <li title='Blog'><Link to="/blog" className={`nav-link link `}>
+                        <span className="material-symbols-outlined">sticky_note_2</span>
+                        </Link></li> : ""}
                         
                         
-                        {!isAuth ? <li>
+                        {!isAuth ? <li title='Login'>
                                <Link to='/login'> <span className="material-symbols-outlined">login</span> </Link> </li>:
                          ""}
                         {isAuth ? <div className='search-container'>
@@ -160,8 +165,8 @@ const Navbar = () => {
                         </div> : ""}
 
                         {isAuth ?
-                            <span className="material-symbols-outlined btn" onClick={changeTheme} >
-                                {toggleTheme}
+                            <span className="material-symbols-outlined btn" onClick={toggleTheme} >
+                                {theme ? "light_mode": "dark_mode"}
                             </span>
                             : ""}
                         {isAuth ?
