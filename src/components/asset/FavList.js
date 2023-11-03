@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import './styles/favList.css'
-import FavMovies from './FavMovies'
+import '../styles/favList.css'
+import FavMovies from '../asset/FavMovies'
 const FavList = () => {
 
     const favMovies = useSelector(state=> state.favorite.movies)

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './styles/blog.css';
+import '../styles/blog.css';
 const Blog = () => {
   
 
@@ -30,7 +30,7 @@ const Blog = () => {
           <p>{item.body}</p>
         </div>
       })}
-      <h1></h1>
+      <h1>Mai hu na</h1>
     </div>
   )
 }

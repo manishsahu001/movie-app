@@ -1,7 +1,7 @@
 import React from 'react'
-import './styles/cardOvervies.css'
+import '../styles/cardOvervies.css'
 import { useDispatch } from 'react-redux'
-import { favActions } from '../redux/slice/favorite'
+import { favActions } from '../../redux/slice/favorite'
 import {toast} from 'react-toastify'
 const CardOverview = ({ movie }) => {
 

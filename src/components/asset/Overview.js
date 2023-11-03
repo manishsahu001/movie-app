@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Card from './Card';
 import CardOverview from './CardOverview';
 // import staticImage from '../img/default.jpg'
-import './styles/overview.css';
-import loadingGif from '../img/loading.gif'
+import '../styles/overview.css';
+import loadingGif from '..//../img/loading.gif'
 const Overview = () => {
 
   const [selectedMovie, setSelectedMovie] = useState();

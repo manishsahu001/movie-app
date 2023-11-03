@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const uiSlice = createSlice({
     name: 'ui',
-    initialState: {favListVisible: false, btnClass: false, InputClass: false, isAuth: false},
+    initialState: {favListVisible: false, btnClass: false, InputClass: false, isAuth: false, dark: true},
     reducers:{
         toggle(state){
             state.favListVisible = !state.favListVisible;
@@ -13,7 +13,9 @@ const uiSlice = createSlice({
         setInputClass(state){
             state.InputClass = !state.InputClass;
         },
-
+        toggleTheme(state){
+            state.dark = !state.dark;
+        }
     }
 });
 

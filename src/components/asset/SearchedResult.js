@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles/cardOvervies.css'
+import '../styles/cardOvervies.css'
 const SearchedResult = ({ id, title, type, year, poster }) => {
   return (
     <>

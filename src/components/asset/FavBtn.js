@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { uiActions } from '../redux/slice/ui-slice';
-import './styles/FavBtn.css'
+import { uiActions } from '../../redux/slice/ui-slice';
+import '../styles/FavBtn.css'
 const FavBtn = () => {
 
   const dispatch = useDispatch();

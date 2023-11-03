@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 // import '../App.css'
-import './styles/navbar.css';
+import '../styles/navbar.css';
 import { toast } from 'react-toastify'
 import { Link, useNavigate } from 'react-router-dom';
-import loadingGif from '../img/loading.gif';
-import SearchedResult from './SearchedResult';
-import FavBtn from './FavBtn';
+import loadingGif from '../../img/loading.gif';
+import SearchedResult from '../asset/SearchedResult';
+import FavBtn from '../asset/FavBtn';
 import { useSelector, useDispatch } from 'react-redux';
-import { uiActions } from '../redux/slice/ui-slice';
+import { uiActions } from '../../redux/slice/ui-slice'
 const Navbar = () => {
 
     const dispatch = useDispatch()
@@ -127,7 +127,6 @@ const Navbar = () => {
         setLoading(false);
     };
 
-
     return (
         <>
             <div className="header">
@@ -148,17 +147,11 @@ const Navbar = () => {
 
                         {isAuth ? <li><Link to="/about" className={` nav-link link `}>ABOUT</Link></li> : ""}
                         {isAuth ? <li><Link to="/blog" className={`nav-link link `}>BLOG</Link></li> : ""}
-                        {/* {isAuth ? <li><input type="search" name="search" id="search" placeholder={'Search...'} className={` ${toggleClass} nav-link link `} /></li> : ""} */}
-
-
+                        
+                        
                         {!isAuth ? <li>
-                            <Link to="/login" className={` ${toggleClass} nav-link link `}>
-                                <span className="material-symbols-outlined">
-                                    login
-                                </span>
-                            </Link>
-                        </li> : ""}
-
+                               <Link to='/login'> <span className="material-symbols-outlined">login</span> </Link> </li>:
+                         ""}
                         {isAuth ? <div className='search-container'>
                             <span className="material-symbols-outlined btn" onClick={addInputClass}>
                                 search
