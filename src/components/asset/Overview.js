@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import CardOverview from './CardOverview';
 import '../styles/overview.css';
 import loadingGif from '../../img/loading.gif'
+import { useSelector } from 'react-redux';
 const Overview = () => {
 
 
@@ -20,6 +21,7 @@ const Overview = () => {
   
   const location = useLocation()
 
+  // const auth = useSelector(state => state.ui.isAuth);
   const getMovies = async()=>{
     setLoading(true)
     try {

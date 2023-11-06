@@ -40,7 +40,6 @@ const App = () => {
       theme="dark"
     />
 
-    {/* {getToken ? <Footer /> : "" } */}
   </BrowserRouter>
     </>
   )

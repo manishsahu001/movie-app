@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import '../styles/favList.css'
 import FavMovies from '../asset/FavMovies'
@@ -11,7 +11,6 @@ const FavList = () => {
   return (
     <div>
 
-{/* imdbID, poster, title, type, quantity */}
 <div className='fav-list' id={theme ? "" : "fav-list-light"}>
         {count === 0 ? 
         <h2>
