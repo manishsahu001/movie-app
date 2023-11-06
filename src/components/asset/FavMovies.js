@@ -39,17 +39,17 @@ const FavMovies = ({ id, title, poster, type, quantity }) => {
         </div>
 
         <div className="fav-movie-description">
-          <h1>{title}</h1>
+          {/* <h1>{title}</h1>
           <p>{id}</p>
           <p>{type}</p>
-          <p>{quantity}</p>
+          <p>{quantity}</p> */}
         </div>
 
-        <button onClick={addToFav}><span class="material-symbols-outlined">
+        <button className='btn-add' onClick={addToFav}><span class="material-symbols-outlined ">
           add
         </span></button>
-        <button onClick={removeFromFav}>
-        <span class="material-symbols-outlined">
+        <button className='btn-remove' onClick={removeFromFav}>
+        <span class="material-symbols-outlined ">
 remove
 </span>
         </button>

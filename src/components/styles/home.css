@@ -4,16 +4,10 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
+    min-height: 90vh;
 }
 
-.light-home{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    background-color: black;
-    background: white;
-    color: white;
-    border: 2px solid red;
+#light-home{
+    background: #edf2ff;
+    color: black;
 }

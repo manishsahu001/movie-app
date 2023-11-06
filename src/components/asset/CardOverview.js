@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/cardOvervies.css'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { favActions } from '../../redux/slice/favorite'
 import {toast} from 'react-toastify'
 const CardOverview = ({ movie }) => {
@@ -21,15 +21,15 @@ const CardOverview = ({ movie }) => {
     notify("Added to fav")
   }
 
-  
+  const theme = useSelector(state => state.ui.dark);
   return (
     <>
-      <div className="movie-overview" >
+      <div className="movie-overview" id={theme ? "" : "movie-overview-light"} >
         <div className="movie-poster">
           <img src={movie.Poster} alt="Movie Poster" className='movie-poster-img' />
         </div>
 
-        <div className="movie-description">
+        <div className="movie-description" id={theme ? "" : "movie-description-light"}>
           <h1>{movie.Title}</h1>
           <ul>
             <li>ID - {movie.imdbID} / </li>

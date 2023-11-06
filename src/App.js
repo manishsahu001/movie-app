@@ -10,7 +10,6 @@ import { ToastContainer} from 'react-toastify';
 import Blog from './components/pages/Blog'
 import About from './components/pages/About'
 import { useSelector } from 'react-redux'
-
 import FavList from './components/asset/FavList';
 
 
@@ -18,21 +17,22 @@ const getToken = localStorage.getItem('token')
 
 const App = () => {
 
-
-  const showFavList = useSelector(state => state.ui.favListVisible);
+  const navToggle= useSelector(state => state.ui.btnClass);
 
   return (
     <>
   <BrowserRouter>
     <Navbar />
-    {showFavList  && <FavList /> }
+     
     <Routes>
       <Route path='/' element={<LandingPage />} />
       <Route path='/login' element={<Login />} />
       {getToken ? <Route path='/home' element={<Home />} /> : null}
       {getToken ? <Route path='/about' element={<About />} /> : null}
       {getToken ? <Route path='/blog' element={<Blog />} /> : null}
+      {getToken ? <Route path='/favlist' element={<FavList />} /> : null}
     </Routes>
+    
     <ToastContainer 
       position="bottom-right"
       autoClose={1000}
@@ -41,11 +41,10 @@ const App = () => {
       pauseOnFocusLoss
       draggable
       theme="dark"
-      
     />
+
     {/* {getToken ? <Footer /> : "" } */}
   </BrowserRouter>
-    
     </>
   )
 }

@@ -1,15 +1,16 @@
 .fav-movie-card{
     border: 2px solid red;
-    background-color: #1b3ac6b6;
+    /* background: linear-gradient(rgba(21, 179, 188, 0.623)); */
    width: 25rem;
    margin: 2rem;
    padding: 2rem;
    height: 50rem;
-
+   
 }
 .fav-movie-poster img{
     width: 100%;
     margin-bottom: 2rem;
+    position: relative;
 }
 .fav-movie-card button{
     font-size: 3rem;
@@ -19,8 +20,7 @@
     float: right;
     margin: .2rem;
     /* background-color: transparent; */
-    background: red;
+    background: lightsalmon;
     border-radius: 1rem;
     border: none;
-    
 }

@@ -4,6 +4,7 @@ import CardOverview from './CardOverview';
 // import staticImage from '../img/default.jpg'
 import '../styles/overview.css';
 import loadingGif from '..//../img/loading.gif'
+// import Skeleton from 'react-loading-skeleton';
 const Overview = () => {
 
   const [selectedMovie, setSelectedMovie] = useState( {
@@ -19,10 +20,15 @@ const Overview = () => {
   
   const getMovies = async()=>{
     setLoading(true)
-    const response = await fetch("http://www.omdbapi.com/?apikey=6095e741&s=forest");
+    try {
+    const response = await fetch("https://www.omdbapi.com/?apikey=6095e741&s=forest");
     const data = await response.json();
     console.log(data);
     setMovies(data.Search)
+    } catch (error) {
+      console.log(error.message)
+      return <h1>Failed To Featch Data, Please check your internet connectivity.</h1>
+    }
     setLoading(false)
   }
   useEffect(() => {
@@ -37,21 +43,18 @@ const Overview = () => {
   return (
     <>
 
-      <div className="overview">
-
+     {loading ? <img src={loadingGif} alt='Loading....' /> :  <div className="overview">
         <div className='show-card'>
-          {loading ? <img src={loadingGif} alt="Loading..." /> : movies.map((movie) => {
-            return <Card key={movie.Poster} movie={movie} onClick={handleMovieClick} />
+          {movies.map((movie) => {
+            return <Card key={movie.Poster} Poster={movie.Poster    } movie={movie} onClick={handleMovieClick} />
           })} 
         </div>
 
-        <div className="preview-card">
-          
+       <div className="preview-card">
           {selectedMovie && <CardOverview movie={selectedMovie} />}
         </div>
-
-          
       </div>
+}
     </>
   )
 }

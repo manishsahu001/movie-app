@@ -9,21 +9,20 @@
     position: sticky;
     top: 0;
     z-index: 10000;    
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
 }
 
-.navbar-light{
-    background-color: white;
-    color: black;
-}
+
+
 
 .header .logo {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    /* height: 100px; */
     padding-left: 1rem;
+}
+.header .logo h1{
     cursor: pointer;
 }
 
@@ -32,12 +31,6 @@
     margin-right: 0;
 }
 
-.header nav {
-    /* display: flex;
-     align-items: center;
-     justify-content: space-between;
-     padding: 1rem; */
-}
 
 .header h1 {
     font-size: 1.8rem;
@@ -77,7 +70,6 @@
 
 .header .navbar li input {
     height: 2.5rem;
-    /* display: none; */
 }
 
 .header #btn-nav {
@@ -85,7 +77,7 @@
     background-color: transparent;
     border: none;
     color: black;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 2rem;
     margin-right: 1rem;
     cursor: pointer;
@@ -93,7 +85,6 @@
 
 .navbar .btn {
     color: white;
-    cursor: pointer;
     margin: .5rem;
     padding: .6rem;
 }
@@ -103,7 +94,6 @@
     cursor: pointer;
 }
 
-.active {}
 
 .search-container {
     display: flex;
@@ -129,6 +119,8 @@
     cursor: pointer;
 
 }
+/* --------------------- Search bar toggle -----------------------------  */
+
 .expand {
     position: absolute;
     top: 130%;
@@ -140,21 +132,35 @@
     color: black;
 }
 
+/* ---------------------------- Light theme ----------------------------- */
+#navbar-light{
+    background: #edf2ff;
+    color: black;
+    border-bottom: .1rem solid rgba(36, 34, 34, 0.066);
+}
+.navbar #btn-light{
+    color: black;
+}
+#btn-nav{
+    color: black;
+}
+#nav-toggler{
+    color: black;
+}
+
 /* --------------- Navbar Responsive ---------------------- */
 @media screen and (max-width: 657px) {
 
     .header {
         display: inline-block;
         width: 100%;
-        height: auto;
-        /* background-color: lightcyan; */
+        background: black;
     }
 
     .header .logo,
     .header .logo.btn-nav {
-        padding: 1.8rem;
+        padding: 1rem;
     }
-
 
     .header nav {
         display: none;
@@ -174,8 +180,8 @@
     }
 
     .header .active .navbar li {
-        border: 1px solid green;
-        width: 100%;
+        border-top: .2rem solid white;
+        width: 95vw;
         display: block;
         text-align: center;
     }
@@ -188,5 +194,10 @@
 @media screen and (max-width: 337px) {
     .header{
         width: 100%;
+    }
+
+    .header .navbar li span{
+        /* height: 10px; */
+        font-size: 3.2rem;
     }
 }

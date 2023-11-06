@@ -8,6 +8,7 @@ import SearchedResult from '../asset/SearchedResult';
 import FavBtn from '../asset/FavBtn';
 import { useSelector, useDispatch } from 'react-redux';
 import { uiActions } from '../../redux/slice/ui-slice'
+// import Card from '../asset/Card';
 const Navbar = () => {
 
     const dispatch = useDispatch()
@@ -30,7 +31,7 @@ const Navbar = () => {
     }
     const toggleInputClass = inputClass ? "expand" : "search-input";
 
-    
+
     const logout_notify = (msg) => {
         toast.success(msg, {
             position: "bottom-right",
@@ -43,7 +44,7 @@ const Navbar = () => {
         const login = () => {
             const token = localStorage.getItem('token');
             if (token) {
-                setIsAuth(true);   
+                setIsAuth(true);
             }
         }
         login()
@@ -81,7 +82,7 @@ const Navbar = () => {
     // }
 
 
-   
+
     const [searchMovie, setSearchMovie] = useState('');
     const [getMovie, setGetMovie] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -97,9 +98,9 @@ const Navbar = () => {
 
         // Loading while fetching the data.
         setLoading(true);
-        
+
         // Fetching data from the api
-        const response = await fetch(`http://www.omdbapi.com/?apikey=6095e741&s=${movie}`);
+        const response = await fetch(`https://www.omdbapi.com/?apikey=6095e741&s=${movie}`);
         const data = await response.json();
 
         // After getting the data from api set in the state.
@@ -121,72 +122,98 @@ const Navbar = () => {
 
 
 
-     // Theme Changing
-     const theme = useSelector(state=> state.ui.dark)
-    const toggleTheme = ()=>{
+    // Theme Changing
+    const theme = useSelector(state => state.ui.dark)
+    const toggleTheme = () => {
         dispatch(uiActions.toggleTheme())
     }
     return (
         <>
-            <div className={"header"}>
+            <div className={"header"} id={theme ? "" : "navbar-light"}>
                 <div className="logo">
-                    <h1 onClick={()=>{navigate('/')}}>
+                    <h1 onClick={() => { navigate('/') }}>
                         <span>Z</span>edFlix
                     </h1>
-                    <button id='btn-nav' onClick={addNewClass}>
-                        <span className={`material-symbols-outlined`}>
-                            menu
+                    <button id={`btn-nav`} onClick={addNewClass}>
+                        <span className={`material-symbols-outlined`} id={theme ? "" : "nav-toggler"}>
+                            {toggleClass ? "close" : "menu"}
                         </span>
                     </button>
                 </div>
 
                 <nav className={` ${toggleClass}`}>
                     <ul className='navbar'>
-                        {isAuth ? <li title='Home'><Link to="/home" className={` nav-link link `}>
-                        <span className="material-symbols-outlined">home</span>
-                        </Link></li> : ""}
+                        {isAuth ?
+                            <li title='Home' onClick={addNewClass}>
+                                <Link to="/home" className={` nav-link link `}>
+                                    <span className="material-symbols-outlined btn" id={theme ? "" : "btn-light"}>home</span>
+                                </Link>
+                            </li> : ""}
 
-                        {isAuth ? <li title='About'><Link to="/about" className={` nav-link link `}>
-                        <span className="material-symbols-outlined">info</span>
-                        </Link></li> : ""}
-                        {isAuth ? <li title='Blog'><Link to="/blog" className={`nav-link link `}>
-                        <span className="material-symbols-outlined">sticky_note_2</span>
-                        </Link></li> : ""}
-                        
-                        
-                        {!isAuth ? <li title='Login'>
-                               <Link to='/login'> <span className="material-symbols-outlined">login</span> </Link> </li>:
-                         ""}
+                        {isAuth ?
+                            <li title='About' onClick={addNewClass}>
+                                <Link to="/about" className={` nav-link link `}>
+                                    <span className="material-symbols-outlined btn" id={theme ? "" : "btn-light"}>info</span>
+                                </Link>
+                            </li> : ""}
+
+                        {isAuth ?
+                            <li title='Blog' onClick={addNewClass}  ><Link to="/blog" className={`nav-link link `}>
+                                <span className="material-symbols-outlined btn" id={theme ? "" : "btn-light"}>sticky_note_2</span>
+                            </Link>
+                            </li> : ""}
+
+
+                        {!isAuth ? <li title='Login' onClick={addNewClass}>
+                            <Link to='/login'>
+                                <span className="material-symbols-outlined btn">login</span>
+                            </Link>
+                        </li> :
+                            ""}
                         {isAuth ? <div className='search-container'>
-                            <span className="material-symbols-outlined btn" onClick={addInputClass}>
-                                search
-                            </span>
+                            <li>
+                                <span className="material-symbols-outlined btn" id={theme ? "" : "btn-light"} onClick={addInputClass}>
+                                    search
+                                </span>
+                            </li>
                             <input type="search" className={`${toggleInputClass}`} name="search" id="search" placeholder='Search...' onChange={handleSearch} />
                         </div> : ""}
 
                         {isAuth ?
-                            <span className="material-symbols-outlined btn" onClick={toggleTheme} >
-                                {theme ? "light_mode": "dark_mode"}
-                            </span>
+                            <li>
+                                <span className="material-symbols-outlined btn" id={theme ? "" : "btn-light"} onClick={toggleTheme} >
+                                    {theme ? "light_mode" : "dark_mode"}
+                                </span>
+                            </li>
                             : ""}
                         {isAuth ?
-                            <div>
-                                <FavBtn />
-                            </div>
+                            <li>
+                                <Link to="/favlist">
+                                    <div className='btn'>
+                                        <FavBtn />
+                                    </div>
+                                </Link>
+                            </li>
                             : ""}
 
                         {isAuth ?
-                            <span className="material-symbols-outlined btn" onClick={logout}>
-                                logout
-                            </span>
+                            <li>
+                                <span className="material-symbols-outlined btn" id={theme ? "" : "btn-light"} onClick={logout}>
+                                    logout
+                                </span>
+                            </li>
                             : ""}
 
                     </ul>
                 </nav>
             </div>
 
-            {loading ? <img src={loadingGif} alt="Loading...." /> : getMovie.map((item) => {
-                return <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "1.2rem" }}> <SearchedResult key={item.imdbID} title={item.Title} year={item.Year} type={item.Type} imbdId={item.imbdId} poster={item.Poster} /> </div>
+            {/* {loading ? <img src={loadingGif} alt="Loading...." /> : getMovie.map((movie) => {
+                return <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "1.2rem" }}> <SearchedResult key={movie.imdbID} movie={movie} /> </div>
+            })} */}
+
+            {loading ? <img src={loadingGif} alt="Loading...." /> : getMovie.map((movie) => {
+                return <SearchedResult key={movie.imdbID} movie={movie}  />
             })}
         </>
     )

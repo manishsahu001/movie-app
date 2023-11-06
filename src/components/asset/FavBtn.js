@@ -10,12 +10,13 @@ const FavBtn = () => {
     dispatch(uiActions.toggle())
   }
 
+  const theme = useSelector(state => state.ui.dark)
 
 
   return (
     <>
-      <button  onClick={toggleFavList} className='fav-btn'>
-        <span className="material-symbols-outlined">
+      <button  onClick={toggleFavList} className='fav-btn' >
+        <span className="material-symbols-outlined" id={theme ? "" : "fav-btn-light"}>
           favorite
         </span>
 
