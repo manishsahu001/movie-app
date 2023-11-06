@@ -25,7 +25,7 @@ const favSlice = createSlice({
             }
             console.log(newMovie)
         },
-
+        
         removeFromFav(state, action){
             const id = action.payload;
             let existingMovie = state.movies.find((movie)=> movie.id === id);

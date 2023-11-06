@@ -1,37 +1,29 @@
-import React, { useEffect, useState } from 'react'
-import '../styles/blog.css';
+import React from 'react'
+import '../styles/about-blog.css'
+import blogData from '../../dummyBlog';
+import { useSelector } from 'react-redux';
 const Blog = () => {
-  
 
-  const [blog, setBlog] = useState([]);
 
-  const fetchData = async ()=>{
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-    const data = await response.json();
-    console.log(data)
-
-    setBlog(data);
-  }
-
-  useEffect(() => {
-    fetchData()
-  }, [])
-  
-
-  
-
+  const theme = useSelector(state => state.ui.dark)
   return (
-    <div>
+    <>
 
-      {blog.map((item)=>{
-        return <div key={item.id}>
-          <p>{item.id}</p>
-          <h1>{item.title}</h1>
-          <p>{item.body}</p>
-        </div>
+<div className="content-container-ab" id={theme ? "" : "content-container-ab-light"}>
+        
+      {blogData.map((blog)=>{
+          return <div className="ab-container blog-box-h" key={blog.id}>
+          {/* <span className="material-symbols-outlined">high_quality</span> */}
+            <div className="ab-content-descripton">
+              <h1>{blog.heading}</h1>
+              <p>
+                {blog.description}
+              </p>
+            </div>
+          </div>
       })}
-      <h1>Mai hu na</h1>
-    </div>
+      </div>
+    </>
   )
 }
 

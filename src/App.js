@@ -9,15 +9,12 @@ import Login from './components/asset/Login'
 import { ToastContainer} from 'react-toastify';
 import Blog from './components/pages/Blog'
 import About from './components/pages/About'
-import { useSelector } from 'react-redux'
 import FavList from './components/asset/FavList';
 
 
 const getToken = localStorage.getItem('token')
 
 const App = () => {
-
-  const navToggle= useSelector(state => state.ui.btnClass);
 
   return (
     <>

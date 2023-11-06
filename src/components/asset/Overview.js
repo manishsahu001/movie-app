@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Card from './Card';
+import { useLocation } from 'react-router-dom';
 import CardOverview from './CardOverview';
-// import staticImage from '../img/default.jpg'
 import '../styles/overview.css';
-import loadingGif from '..//../img/loading.gif'
-// import Skeleton from 'react-loading-skeleton';
+import loadingGif from '../../img/loading.gif'
 const Overview = () => {
+
 
   const [selectedMovie, setSelectedMovie] = useState( {
     "Title": "Journey 2: The Mysterious Island",
@@ -18,6 +18,8 @@ const Overview = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false)
   
+  const location = useLocation()
+
   const getMovies = async()=>{
     setLoading(true)
     try {
@@ -32,8 +34,10 @@ const Overview = () => {
     setLoading(false)
   }
   useEffect(() => {
-    getMovies();
-  }, [])
+    if(location.pathname === '/home'){
+      getMovies();
+    }
+  }, [location.pathname])
   
 
   const handleMovieClick = (movie) => {
