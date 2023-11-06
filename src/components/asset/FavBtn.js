@@ -1,21 +1,13 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { uiActions } from '../../redux/slice/ui-slice';
+import React from 'react'
+import { useSelector } from 'react-redux'
 import '../styles/FavBtn.css'
 const FavBtn = () => {
 
-  const dispatch = useDispatch();
   const totalMovies = useSelector(state => state.favorite.totalMovies)
-  const toggleFavList = () => {
-    dispatch(uiActions.toggle())
-  }
-
   const theme = useSelector(state => state.ui.dark)
-
-
   return (
     <>
-      <button  onClick={toggleFavList} className='fav-btn' >
+      <button  className='fav-btn'>
         <span className="material-symbols-outlined" id={theme ? "" : "fav-btn-light"}>
           favorite
         </span>

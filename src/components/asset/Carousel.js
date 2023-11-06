@@ -1,7 +1,10 @@
 import React from 'react'
 import '../styles/carousel.css'
 import carouselImage from '../../img/bg-3.jpg'
+
 const Carousel = () => {
+
+
     return (
         <>
             <div className="carousel">

@@ -22,7 +22,7 @@ const Navbar = () => {
 
 
     const [isAuth, setIsAuth] = useState(false);
-    const [dark, setDark] = useState(true)
+
 
     // Toggle Search Input field
     const inputClass = useSelector(state => state.ui.InputClass)
@@ -50,37 +50,7 @@ const Navbar = () => {
         login()
     }, [navigate])
 
-    // Logout Action
-    const logout = () => {
-        localStorage.removeItem('token')
-        setIsAuth(false);
-        navigate('/')
-        logout_notify("Logged Out!")
-    }
-
-    // Search Movie 
-    // const [searchMovie, setSearchMovie] = useState('');
-    // const [getMovie, setGetMovie] = useState([]);
-    // const [loading, setLoading] = useState(false);
-
-
-    // const handleSearch = (e)=>{
-    //     const movie = e.target.value;
-    //     setSearchMovie(movie);
-    //     if(loading){
-    //         return <h1>Loading....</h1>
-    //     }
-    //     if(movie.trim() === ''){
-    //         setGetMovie([])
-    //     }else{
-
-    //         const movieResults = Data.filter((item)=>{
-    //             return item.Title.toLowerCase().includes(movie.toLowerCase());
-    //         })
-    //         setGetMovie(movieResults)
-    //     }
-    // }
-
+    
 
 
     const [searchMovie, setSearchMovie] = useState('');
@@ -126,6 +96,15 @@ const Navbar = () => {
     const theme = useSelector(state => state.ui.dark)
     const toggleTheme = () => {
         dispatch(uiActions.toggleTheme())
+    }
+
+    // Logout Action
+    const logout = () => {
+        localStorage.removeItem('token')
+        setIsAuth(false);
+        navigate('/')
+        logout_notify("Logged Out!")
+        
     }
     return (
         <>
@@ -176,7 +155,7 @@ const Navbar = () => {
                                     search
                                 </span>
                             </li>
-                            <input type="search" className={`${toggleInputClass}`} name="search" id="search" placeholder='Search...' onChange={handleSearch} />
+                            <input type="search" className={`${toggleInputClass}`} id={inputClass ? "expand" : "" } name="search" placeholder='Search...' onChange={handleSearch} />
                         </div> : ""}
 
                         {isAuth ?
@@ -212,9 +191,12 @@ const Navbar = () => {
                 return <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "1.2rem" }}> <SearchedResult key={movie.imdbID} movie={movie} /> </div>
             })} */}
 
+            <div style={{display: "flex", flexWrap: "wrap"}}>
+
             {loading ? <img src={loadingGif} alt="Loading...." /> : getMovie.map((movie) => {
                 return <SearchedResult key={movie.imdbID} movie={movie}  />
             })}
+            </div>
         </>
     )
 }

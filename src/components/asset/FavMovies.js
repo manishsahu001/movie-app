@@ -6,10 +6,10 @@ import { toast } from 'react-toastify';
 const FavMovies = ({ id, title, poster, type, quantity }) => {
 
 
-  const notify  = (msg)=>{
+  const notify = (msg) => {
     toast.success(msg)
   }
-  const notify2  = (msg)=>{
+  const notify2 = (msg) => {
     toast.success(msg)
   }
   const dispatch = useDispatch();
@@ -37,22 +37,22 @@ const FavMovies = ({ id, title, poster, type, quantity }) => {
         <div className="fav-movie-poster">
           <img src={poster} alt="Movie Poster" />
         </div>
+          <h1>Title - {title}</h1>
 
         <div className="fav-movie-description">
-          {/* <h1>{title}</h1>
-          <p>{id}</p>
-          <p>{type}</p>
-          <p>{quantity}</p> */}
+          <div className="fav-movie-details">
+          <p>imdbID - {id}</p>
+          <p>Type - {type}</p>
+          <p>Quantity - {quantity}</p>
+          </div>
+
+          
+        <div className="fav-action-btn">
+          <button className='btn-remove' onClick={removeFromFav}>-</button>
+          <button className='btn-add' onClick={addToFav}>+</button>
+        </div>
         </div>
 
-        <button className='btn-add' onClick={addToFav}><span class="material-symbols-outlined ">
-          add
-        </span></button>
-        <button className='btn-remove' onClick={removeFromFav}>
-        <span class="material-symbols-outlined ">
-remove
-</span>
-        </button>
       </div>
 
     </>

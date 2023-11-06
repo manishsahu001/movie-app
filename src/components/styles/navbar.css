@@ -121,15 +121,16 @@
 }
 /* --------------------- Search bar toggle -----------------------------  */
 
-.expand {
-    position: absolute;
-    top: 130%;
-    transform: translate(-60%);
+.search-container .expand {
+    color: #000;
     display: inline-block;
-    width: 300px;
-    height: 50px;
     font-size: 1.5rem;
-    color: black;
+    height: 50px;
+    position: absolute;
+    top: 100%;
+    -webkit-transform: translate(-60%);
+    transform: translate(-30%);
+    width: 300px;
 }
 
 /* ---------------------------- Light theme ----------------------------- */
@@ -155,6 +156,7 @@
         display: inline-block;
         width: 100%;
         background: black;
+        position: relative;
     }
 
     .header .logo,
@@ -189,6 +191,10 @@
     .header #btn-nav {
         display: block;
     }
+    #expand{
+        transform: translate(20%);
+    }
+
 }
 
 @media screen and (max-width: 337px) {

@@ -7,14 +7,17 @@ import feature2Img from '../../img/feature-2.jpg'
 import feature3Img from '../../img/feature-3.jpg'
 import feature4Img from '../../img/feature-4.jpg'
 import feature5Img from '../../img/feature-5.jpg'
+import { useSelector } from 'react-redux'
 // import gifi from '../img/tvChannelChangingWomen.gif'
 const LandingPage = () => {
+
+  const theme = useSelector(state => state.ui.dark)
+
   return (
     <div>
       <Carousel />
-      {/* <Movies />  */}
 
-      <div className="home-container">
+      <div className="home-container" id={theme ? "" : "home-container-light"} >
         <div className="box">
           <div className="description-box" id='box-1'>
             <div className="content content-alignment">

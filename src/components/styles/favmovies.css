@@ -1,26 +1,51 @@
-.fav-movie-card{
-    border: 2px solid red;
-    /* background: linear-gradient(rgba(21, 179, 188, 0.623)); */
-   width: 25rem;
-   margin: 2rem;
-   padding: 2rem;
-   height: 50rem;
-   
+.fav-movie-card {
+    border: 2px solid rgba(232, 210, 210, 0.1)(201, 193, 193);
+    background: rgba(1, 43, 61, 0.701);
+    width: 25rem;
+    margin: 2rem;
+    border-radius: .5rem;
+    height: 40%;
+    box-sizing: border-box;
 }
-.fav-movie-poster img{
-    width: 100%;
+
+
+.fav-movie-poster {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fav-movie-poster img {
+    width: 70%;
     margin-bottom: 2rem;
-    position: relative;
 }
-.fav-movie-card button{
-    font-size: 3rem;
-    width: 5rem;
+.fav-movie-card h1{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+.fav-movie-description{
+    padding: 1rem;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    gap: 1rem;
+}
+.fav-movie-card button {
+    width: 4rem;
+    height: 3rem;
+    background-color: transparent;
+    border-radius: .5rem;
     color: white;
+    font-weight: bold;
+    font-size: 2rem;
     cursor: pointer;
-    float: right;
-    margin: .2rem;
-    /* background-color: transparent; */
-    background: lightsalmon;
-    border-radius: 1rem;
-    border: none;
+    margin-right: .2rem;
+    border: 1px solid grey;
+    outline: none;
+}
+.fav-movie-card button:hover{
+    color: white;
+    background-color: darkred;
+    transition: .3s ease-in;
 }

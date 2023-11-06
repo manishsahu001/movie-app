@@ -45,6 +45,20 @@
     color: white;
 }
 
+/* ----------------------------------------- Theme ---------------------- */
+#home-container-light{
+    background: white;
+    color: black;
+}
+#home-container-light .content h1, #home-container-light .content p{
+    color: black;
+}
+#home-container-light .description-box{
+    /* border-top: 1px solid grey; */
+    border: none;
+    border-top: 2px solid #ffe3e3;
+    height: 40rem;
+}
 
 /* ------------------ Responsisve ---------------------------- */
 
