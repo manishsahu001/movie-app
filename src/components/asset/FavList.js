@@ -11,7 +11,7 @@ const FavList = () => {
   return (
     <div>
 
-<div className='fav-list'>
+<div className='fav-list' id={theme ? "" : "fav-list-light"}>
         {
         count === 0 ? 
         <h2>

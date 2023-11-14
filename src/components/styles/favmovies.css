@@ -49,3 +49,12 @@
     background-color: darkred;
     transition: .3s ease-in;
 }
+
+.fav-movie-card span{
+    color: yellow;
+    padding: 1rem;
+}
+.fav-movie-card span:last-child:hover{
+    cursor: pointer;
+    color: red;
+}

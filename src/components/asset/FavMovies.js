@@ -9,24 +9,11 @@ const FavMovies = ({ id, title, poster, type, quantity }) => {
   const notify = (msg) => {
     toast.success(msg)
   }
-  const notify2 = (msg) => {
-    toast.success(msg)
-  }
   const dispatch = useDispatch();
-
-  const addToFav = () => {
-    dispatch(favActions.addToFav({
-      imdbID: id,
-      Poster: poster,
-      Title: title,
-      Type: type,
-    }))
-    notify("Added again")
-  }
 
   const removeFromFav = () => {
     dispatch(favActions.removeFromFav(id))
-    notify2("Removed From Fav")
+    notify("Removed From Fav")
   }
 
 
@@ -43,13 +30,14 @@ const FavMovies = ({ id, title, poster, type, quantity }) => {
           <div className="fav-movie-details">
           <p>imdbID - {id}</p>
           <p>Type - {type}</p>
-          <p>Quantity - {quantity}</p>
+          <p>Added Fav - {quantity}</p>
           </div>
 
           
         <div className="fav-action-btn">
-          <button className='btn-remove' onClick={removeFromFav}>-</button>
-          <button className='btn-add' onClick={addToFav}>+</button>
+          <span className="material-symbols-outlined">stars</span>
+          {/* <button className='btn-remove' >-</button> */}
+          <span className="material-symbols-outlined" onClick={removeFromFav}>delete</span>
         </div>
         </div>
 

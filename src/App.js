@@ -12,6 +12,7 @@ import About from './components/pages/About'
 import FavList from './components/asset/FavList';
 
 
+
 const getToken = localStorage.getItem('token')
 
 const App = () => {
@@ -20,7 +21,8 @@ const App = () => {
     <>
   <BrowserRouter>
     <Navbar />
-     
+
+
     <Routes>
       <Route path='/' element={<LandingPage />} />
       <Route path='/login' element={<Login />} />
