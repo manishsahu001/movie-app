@@ -197,7 +197,7 @@
     .header .search-bar{
         display: block;
     }
-    
+
 
     .header .active {
         display: flex;
@@ -219,6 +219,9 @@
     }
     #expand{
         transform: translate(20%);
+    }
+    .search-container{
+        display: none;
     }
     
 

@@ -188,7 +188,7 @@ const Navbar = () => {
               <div className="search-container">
                 <li>
                   <span
-                    className="material-symbols-outlined btn"
+                    className="material-symbols-outlined btn btn-s"
                     id={theme ? "" : "btn-light"}
                     onClick={addInputClass}
                   >
