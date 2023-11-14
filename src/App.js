@@ -11,8 +11,6 @@ import Blog from './components/pages/Blog'
 import About from './components/pages/About'
 import FavList from './components/asset/FavList';
 
-
-
 const getToken = localStorage.getItem('token')
 
 const App = () => {
@@ -21,8 +19,7 @@ const App = () => {
     <>
   <BrowserRouter>
     <Navbar />
-
-
+  
     <Routes>
       <Route path='/' element={<LandingPage />} />
       <Route path='/login' element={<Login />} />
@@ -32,6 +29,7 @@ const App = () => {
       {getToken ? <Route path='/favlist' element={<FavList />} /> : null}
     </Routes>
     
+
     <ToastContainer 
       position="bottom-right"
       autoClose={1000}

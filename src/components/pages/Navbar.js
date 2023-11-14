@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import '../App.css'
 import "../styles/navbar.css";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
@@ -8,7 +7,7 @@ import SearchedResult from "../asset/SearchedResult";
 import FavBtn from "../asset/FavBtn";
 import { useSelector, useDispatch } from "react-redux";
 import { uiActions } from "../../redux/slice/ui-slice";
-// import Card from '../asset/Card';
+
 const Navbar = () => {
   const dispatch = useDispatch();
 

@@ -19,7 +19,7 @@ const Card = ({Poster, movie, onClick}) => {
     <>
       <div className="card" onClick={()=>{onClick(movie)}}>
         <div className="poster">
-          <img src={movie.Poster} alt="" />
+          <img src={movie.Poster} alt="Movie-Poster" />
 
           <div className="card-content">
             <h1>{movie.Title}</h1>
