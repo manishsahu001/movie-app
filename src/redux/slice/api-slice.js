@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const fetchMovies = createAsyncThunk('home', async ()=>{
-    const response = await fetch("https://www.omdbapi.com/?apikey=6095e741&s=toon")
+    const response = await fetch("https://www.omdbapi.com/?apikey=6095e741&s=jungle")
     const data = await response.json();
     return data.Search;
 })
