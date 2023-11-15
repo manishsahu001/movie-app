@@ -19,7 +19,7 @@ const App = () => {
     <>
   <BrowserRouter>
     <Navbar />
-  
+    {/* <Search /> */}
     <Routes>
       <Route path='/' element={<LandingPage />} />
       <Route path='/login' element={<Login />} />
@@ -39,6 +39,7 @@ const App = () => {
       draggable
       theme="dark"
     />
+
 
   </BrowserRouter>
     </>

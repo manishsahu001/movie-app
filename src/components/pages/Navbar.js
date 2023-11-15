@@ -7,6 +7,7 @@ import SearchedResult from "../asset/SearchedResult";
 import FavBtn from "../asset/FavBtn";
 import { useSelector, useDispatch } from "react-redux";
 import { uiActions } from "../../redux/slice/ui-slice";
+// import Search from "../asset/Search";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -48,7 +49,7 @@ const Navbar = () => {
   const [searchMovie, setSearchMovie] = useState("");
   const [getMovie, setGetMovie] = useState([]);
   const [loading, setLoading] = useState(false);
-  
+
   const handleSearch = async (e) => {
     const movie = e.target.value;
 
@@ -203,6 +204,8 @@ const Navbar = () => {
                   placeholder="Search..."
                   onChange={handleSearch}
                 />
+
+                {/* <Search toggleInputClass={toggleInputClass} inputClass={inputClass} /> */}
               </div>
             ) : (
               ""
@@ -250,18 +253,14 @@ const Navbar = () => {
         </nav>
       </div>
 
-      {/* {loading ? <img src={loadingGif} alt="Loading...." /> : getMovie.map((movie) => {
-                return <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "1.2rem" }}> <SearchedResult key={movie.imdbID} movie={movie} /> </div>
-            })} */}
-
       <div className="search-result">
-  {loading ? (
+        {loading ? (
           <img src={loadingGif} alt="Loading...." />
-          ) : (
-            getMovie.map((movie) => {
-              return <SearchedResult key={movie.imdbID} movie={movie} />;
-            })
-            )}
+        ) : (
+          getMovie.map((movie) => {
+            return <SearchedResult key={movie.imdbID} movie={movie} />;
+          })
+        )}
       </div>
     </>
   );
