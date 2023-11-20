@@ -90,6 +90,7 @@
 .carousel .carousel-content input[type="submit"]:hover {
    background-color: rgba(250, 11, 11, 0.863);
    transition: .7s ease;
+   cursor: not-allowed;
 }
 
 

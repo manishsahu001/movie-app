@@ -7,7 +7,6 @@ import SearchedResult from "../asset/SearchedResult";
 import FavBtn from "../asset/FavBtn";
 import { useSelector, useDispatch } from "react-redux";
 import { uiActions } from "../../redux/slice/ui-slice";
-// import Search from "../asset/Search";
 
 const Navbar = () => {
   const dispatch = useDispatch();

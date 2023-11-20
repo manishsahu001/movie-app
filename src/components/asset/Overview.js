@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Card from './Card';
-import { useLocation } from 'react-router-dom';
 import CardOverview from './CardOverview';
 import '../styles/overview.css';
 import loadingGif from '../../img/loading.gif'

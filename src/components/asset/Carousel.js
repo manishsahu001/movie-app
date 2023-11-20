@@ -19,7 +19,8 @@ const Carousel = () => {
 
                     <form>
                         <input type="email" placeholder='Email Address...' />
-                        <input type="submit" value="GET STARTED" />
+                        <input disabled type="submit" value="GET STARTED"  />
+                      
                     </form>
                 </div>
             </div>

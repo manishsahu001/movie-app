@@ -3,12 +3,14 @@ import uiSlice from "./slice/ui-slice";
 import favSlice from './slice/favorite'
 
 import apiSlice from "./slice/api-slice";
+import searchSlice from "./slice/search-slice";
 
 const store = configureStore({
     reducer: {
         ui: uiSlice,
         favorite: favSlice,
-        apiSlice: apiSlice
+        apiSlice: apiSlice,
+        search: searchSlice
     }
 });
 
