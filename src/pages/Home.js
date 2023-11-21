@@ -1,6 +1,6 @@
 import React from "react";
-import Overview from "../asset/Overview";
-import '../styles/home.css'
+import Overview from "../components/Overview";
+import './styles/home.css'
 // import TopMovie from "../asset/TopMovie";
 import { useSelector } from "react-redux";
 

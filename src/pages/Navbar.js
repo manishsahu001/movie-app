@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import "../styles/navbar.css";
+import "./styles/navbar.css";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
-import loadingGif from "../../img/loading.gif";
-import SearchedResult from "../asset/SearchedResult";
-import FavBtn from "../asset/FavBtn";
+import loadingGif from '../assets/img/loading.gif'
+import SearchedResult from "../components/SearchedResult";
+import FavBtn from "../components/FavBtn";
 import { useSelector, useDispatch } from "react-redux";
-import { uiActions } from "../../redux/slice/ui-slice";
-
+import { uiActions } from "../redux/slice/ui-slice";
+  
 const Navbar = () => {
   const dispatch = useDispatch();
 

@@ -1,7 +1,7 @@
 import React from 'react'
-import '../styles/cardOvervies.css'
+import './styles/searchResults.css'
 import Card from './Card'
-import '../styles/searchResults.css';
+// import '../styles/searchResults.css';
 const SearchedResult = ({ movie }) => {
   return (
     <>

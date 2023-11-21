@@ -1,7 +1,7 @@
 import React from 'react'
 import {useSelector } from 'react-redux'
-import '../styles/favList.css'
-import FavMovies from '../asset/FavMovies'
+import './styles/favList.css'
+import FavMovies from './FavMovies'
 import { Link } from 'react-router-dom'
 const FavList = () => {
 

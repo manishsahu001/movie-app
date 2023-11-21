@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { favActions } from '../../redux/slice/favorite';
-import '../styles/favmovies.css'
+import { favActions } from '../redux/slice/favorite';
+import './styles/favmovies.css'
 import { toast } from 'react-toastify';
 const FavMovies = ({ id, title, poster, type, quantity }) => {
 

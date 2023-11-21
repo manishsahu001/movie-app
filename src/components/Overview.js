@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Card from './Card';
 import CardOverview from './CardOverview';
-import '../styles/overview.css';
-import loadingGif from '../../img/loading.gif'
+import './styles/overview.css';
+import loadingGif from '../assets/img/loading.gif'
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMovies } from '../../redux/slice/api-slice';
+import { fetchMovies } from '../redux/slice/api-slice';
 
 const Overview = () => {
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import '../styles/FavBtn.css'
+import './styles/FavBtn.css'
 const FavBtn = () => {
 
   const totalMovies = useSelector(state => state.favorite.totalMovies)

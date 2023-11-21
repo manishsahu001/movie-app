@@ -1,6 +1,6 @@
 import React from 'react'
-import '../styles/about-blog.css'
-import blogData from '../../dummyBlog';
+import './styles/blog.css'
+import blogData from '../dummyBlog';
 import { useSelector } from 'react-redux';
 const Blog = () => {
 

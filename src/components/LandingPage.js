@@ -1,14 +1,12 @@
 import React from 'react'
-import '../styles/landingpage.css'
-// import Movies from './Movies'
+import './styles/landingpage.css'
 import Carousel from './Carousel'
-import feature1Img from '../../img/feature-1.jpg'
-import feature2Img from '../../img/feature-2.jpg'
-import feature3Img from '../../img/feature-3.jpg'
-import feature4Img from '../../img/feature-4.jpg'
-import feature5Img from '../../img/feature-5.jpg'
+import feature1Img from '../assets/img/feature-1.jpg'
+import feature2Img from '../assets/img/feature-2.jpg'
+import feature3Img from '../assets/img/feature-3.jpg'
+import feature4Img from '../assets/img/feature-4.jpg'
+import feature5Img from '../assets/img/feature-5.jpg'
 import { useSelector } from 'react-redux'
-// import gifi from '../img/tvChannelChangingWomen.gif'
 const LandingPage = () => {
 
   const theme = useSelector(state => state.ui.dark)

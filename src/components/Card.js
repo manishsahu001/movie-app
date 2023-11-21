@@ -1,7 +1,7 @@
 import React from 'react'
-import '../styles/card.css'
+import './styles/card.css'
 import { useDispatch } from 'react-redux'
-import { favActions } from '../../redux/slice/favorite'
+import { favActions } from '../redux/slice/favorite'
 const Card = ({Poster, movie, onClick}) => {
 
 
