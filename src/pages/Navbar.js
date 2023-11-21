@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./styles/navbar.css";
 import { toast } from "react-toastify";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import loadingGif from '../assets/img/loading.gif'
 import SearchedResult from "../components/SearchedResult";
 import FavBtn from "../components/FavBtn";
 import { useSelector, useDispatch } from "react-redux";
 import { uiActions } from "../redux/slice/ui-slice";
+import Cookies from "js-cookie";
   
 const Navbar = () => {
   const dispatch = useDispatch();
-
+  const location = useLocation()
   // Add styles for the navbar responsive.
   const btnClass = useSelector((state) => state.ui.btnClass);
   const addNewClass = () => {
@@ -37,9 +38,11 @@ const Navbar = () => {
   const navigate = useNavigate();
   useEffect(() => {
     const login = () => {
-      const token = localStorage.getItem("token");
+      // const token = localStorage.getItem("token");
+      const token = Cookies.get('login')
       if (token) {
         setIsAuth(true);
+        console.log(location.pathname)
       }
     };
     login();
@@ -91,7 +94,7 @@ const Navbar = () => {
 
   // Logout Action
   const logout = () => {
-    localStorage.removeItem("token");
+    Cookies.remove('login');
     setIsAuth(false);
     navigate("/");
     logout_notify("Logged Out!");

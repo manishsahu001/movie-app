@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import "./styles/login.css"
 import {toast} from 'react-toastify'
+import Cookies from 'js-cookie';
 
-const token = "sdjflserjlejrlewrijn446222gdjdj$33rfhsdfdfdsfde"
+// const token = "sdjflserjlejrlewrijn446222gdjdj$33rfhsdccvgfgfdgregrrerfdfdfdfdsfde"
 
 
 const Login = () => {
@@ -25,33 +26,37 @@ const Login = () => {
         })
     }
 
+    const location = useLocation()
     const navigate = useNavigate();
-    const login = (e)=>{
+    const login = async (e)=>{
         e.preventDefault()
         if(email === isAuth.email && password === isAuth.password){
-            const AuthKey = localStorage.setItem("token", token)
-                notify("LoggedIn success")
+                // localStorage.setItem("token", token)
+                const token =  Cookies.set('login', email, { expires: 1})
                 setIsLogin(true)
-                navigate('/home')
+                if(token){
+                    navigate('/home')
+                }
+                notify("LoggedIn success")
+                console.log(location.pathname)
             
         }else{
-            errorNotify("Invalid Email or Password")
             setIsLogin(false)
-            navigate('/login')
+            errorNotify("Invalid Email or Password")
         }
     }
   return (
     <>
         <div className="form-container">
 
-        <form onSubmit={login} className='form'>
+        <form  className='form'>
             <div>
                 <input type="email" name="email" id="email" placeholder='Email' onChange={(e)=>{setEmail(e.target.value)}}  className='form-input' />
             </div>
             <div>
                 <input type="password" name="password" id="password" placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}} className='form-input'/>
             </div> 
-                <button type='submit' className='btn-login'>Login</button>
+                <button type='submit' className='btn-login' onClick={login}>Login</button>
         </form>
         </div>
     </>

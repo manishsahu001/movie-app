@@ -5,11 +5,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url("../../assets/img/login-bg.jpg");
+    background: rgb(133, 139, 141);
     opacity: .8;
     background-repeat: no-repeat;
     background-size: cover;
-    /* background: white; */
     
 }
 .form{
@@ -22,7 +21,7 @@
     flex-direction: column;
     width: 40%;
     color: white;
-    background: linear-gradient(rgba(0, 0, 0, 0.447), rgba(0, 0, 0, 0.301), rgba(1, 7, 32, 0.379));
+    background: linear-gradient(rgba(168, 163, 163, 0.447), rgba(109, 106, 106, 0.301), rgba(120, 129, 165, 0.379));
 }
 .form input, .form button{
     width: 30rem;
@@ -46,11 +45,7 @@
 .form input::placeholder{
     color: white;
 }
-/* .form input:focus{
-    font-size: 1rem;
-    transition: .6s ease;
-    color: white;
-} */
+
 .form .btn-login{
     margin-top: 2.4rem;
     color: black;
@@ -59,4 +54,13 @@
     border: none;
     color: white;
     cursor: pointer;
+}
+
+
+/* --------------- Responsive ------------------- */
+@media screen and (max-width: 846px) {
+    .form{
+        border: none;
+        background: transparent;
+    }
 }
