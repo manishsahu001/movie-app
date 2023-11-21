@@ -1,7 +1,6 @@
 import React from 'react'
 import './styles/about-blog.css'
 import { useSelector } from 'react-redux'
-import { uiActions } from '../redux/slice/ui-slice'
 
 const About = () => {
 

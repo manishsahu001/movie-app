@@ -5,13 +5,13 @@ import './styles/home.css'
 import { useSelector } from "react-redux";
 
 const Home = () => {
-  const showFavList = useSelector(state => state.ui.favListVisible);
+  // const showFavList = useSelector(state => state.ui.favListVisible);
   const theme = useSelector(state => state.ui.dark);
   return (
     <>
     <div className="home" id={theme ? "" : "light-home"}>
-      {!showFavList && <Overview /> }
-      {/* <TopMovie /> */}
+      {/* {!showFavList && <Overview /> } */}
+      <Overview />
     </div>
     </>
   );

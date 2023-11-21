@@ -5,6 +5,7 @@ import './styles/overview.css';
 import loadingGif from '../assets/img/loading.gif'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMovies } from '../redux/slice/api-slice';
+import SearchedResult from './SearchedResult';
 
 const Overview = () => {
 

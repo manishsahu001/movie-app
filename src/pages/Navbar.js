@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./styles/navbar.css";
 import { toast } from "react-toastify";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loadingGif from '../assets/img/loading.gif'
 import SearchedResult from "../components/SearchedResult";
 import FavBtn from "../components/FavBtn";
@@ -11,7 +11,7 @@ import Cookies from "js-cookie";
   
 const Navbar = () => {
   const dispatch = useDispatch();
-  const location = useLocation()
+  
   // Add styles for the navbar responsive.
   const btnClass = useSelector((state) => state.ui.btnClass);
   const addNewClass = () => {
@@ -42,7 +42,6 @@ const Navbar = () => {
       const token = Cookies.get('login')
       if (token) {
         setIsAuth(true);
-        console.log(location.pathname)
       }
     };
     login();
